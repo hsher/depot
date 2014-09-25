@@ -1,4 +1,5 @@
-depot
+Depot
 =====
 
-depository for rails4
+Link to heroku application: [app_link]
+[app_link]:http://damp-chamber-6812.herokuapp.com/
