@@ -18,8 +18,17 @@ ActiveRecord::Schema.define(version: 20140923171543) do
     t.datetime "updated_at"
   end
 
-# Could not dump table "line_items" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "line_items", force: true do |t|
+    t.integer  "product_id"
+    t.integer  "cart_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "quantity",   default: 1
+    t.integer  "order_id"
+  end
+
+  add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id"
+  add_index "line_items", ["product_id"], name: "index_line_items_on_product_id"
 
   create_table "orders", force: true do |t|
     t.string   "name"
